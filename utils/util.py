@@ -1,8 +1,13 @@
 import requests
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def get_all_clothes():
-    url = "http://squarelab.iptime.org:10000" + "/api/clothing/all"
+    url = os.getenv("API_KEY") + "/api/clothing/all"
 
     response = requests.get(url)
 
